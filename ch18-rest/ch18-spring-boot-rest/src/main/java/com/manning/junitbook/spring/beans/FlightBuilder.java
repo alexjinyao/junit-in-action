@@ -14,7 +14,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-@Configuration
 public class FlightBuilder {
 
     private Map<String, Country> countriesMap = new HashMap<>();
