@@ -1,0 +1,35 @@
+<!--
+    The persistence.xml file is the standard configuration for Hibernate. It is located in the META-INFO folder.
+-->
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+
+    <!--
+        Specifies the persistence unit as manning.hibernate. The persistence.xml file must define a persistence unit with a unique name in the currently scoped class loader.
+    -->
+    <persistence-unit name="manning.hibernate">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <class>com.manning.junitbook.databases.model.Country</class>
+
+        <properties>
+
+            <property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>
+            <!--
+                Specifies the URL of the H2 database. In addition, DB_CLOSE_DELAY=-1 keeps the database open and its content in-memory as long as the virtual machine is alive.
+            -->
+            <property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1"/>
+            <property name="javax.persistence.jdbc.user" value="sa"/>
+            <property name="javax.persistence.jdbc.password" value=""/>
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+
+            <property name="hibernate.show_sql" value="true"/>
+
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+        </properties>
+    </persistence-unit>
+
+</persistence>
