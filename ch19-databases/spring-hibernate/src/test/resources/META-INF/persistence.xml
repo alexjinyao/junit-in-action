@@ -3,6 +3,15 @@
              xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
              version="2.0">
 
+    <!--
+        Specifies the persistence unit as manning.hibernate.
+        The persistence.xml file must define a persistence unit with a unique name in the currently scoped class loader
+
+        Specifies the provider, meaning the underlying implementation of the JPA EntityManager.
+        In this case, the EntityManager is Hibernate.
+
+        Defines the entity class that is managed by Hibernate as the Country class from the application.
+    -->
     <persistence-unit name="manning.hibernate">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <class>com.manning.junitbook.databases.model.Country</class>
